@@ -68,6 +68,7 @@ public class LocationBasedTweets {
         // Reading a JSON file
         Dataset<Row> tweets = spark.read().json("English/Twitter-Day1.json");
 
+        System.out.println("Columns: "+Arrays.stream(tweets.columns()).count());
         Dataset<Row> words = tweets
                 .select("text","place","geo", "coordinates")
                 .withColumn("wordsInTweets", callUDF("makeWordArray", col("text")));

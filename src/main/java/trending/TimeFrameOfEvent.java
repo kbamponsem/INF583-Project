@@ -60,10 +60,10 @@ public class TimeFrameOfEvent {
         }, DataTypes.IntegerType);
 
         Dataset<Row> tweets = spark.read().json(
-                "English/Twitter-Day1.json",
-                "English/Twitter-Day2.json",
-                "English/Twitter-Day3.json",
-                "English/Twitter-Day4.json"
+                "English/Twitter-Day1.json"
+//                "English/Twitter-Day2.json",
+//                "English/Twitter-Day3.json",
+//                "English/Twitter-Day4.json"
 //                "English/Twitter-Day5.json",
 //                "English/Twitter-Day6.json",
 //                "English/Twitter-Day7.json"

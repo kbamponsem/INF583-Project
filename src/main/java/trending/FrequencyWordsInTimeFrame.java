@@ -53,7 +53,7 @@ public class FrequencyWordsInTimeFrame {
         }, DataTypes.IntegerType);
 
         // Reading a JSON file
-        Dataset<Row> tweets = spark.read().json("English/Twitter-Day7.json");
+        Dataset<Row> tweets = spark.read().json("English/Twitter-Day1.json");
 
         Dataset<Row> tweetsWithTime = tweets.select(col("text"), col("created_at"))
                 .withColumn("timeInHours", callUDF("getTimeInHours", col("created_at")))
